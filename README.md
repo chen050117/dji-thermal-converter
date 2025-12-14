@@ -142,12 +142,57 @@ DJI Thermal SDK v1.8 热成像批量转换工具
 
 ```
 dji-thermal-converter/
-├── main.py                    # 主程序
-├── get_thermal_params.py       # 参数读取工具（可选）
+├── main.py                     # 主程序 - 批量转换工具
+├── get_thermal_params.py       # 参数读取工具 - 查看图像嵌入参数
 ├── README.md                   # 说明文档
+├── requirements.txt            # Python 依赖
 ├── dji_thermal_sdk_v1.8_20250829/  # DJI Thermal SDK
 ├── input_dir/                  # 输入图像目录
 └── out_dir/                    # 输出目录
+```
+
+## 参数读取工具
+
+`get_thermal_params.py` 可以读取单张热成像图像中嵌入的测量参数：
+
+```bash
+python get_thermal_params.py <图像路径>
+```
+
+示例：
+```bash
+python get_thermal_params.py input_dir/DJI_20251126161006_0001_T.JPG
+```
+
+输出示例：
+```
+============================================================
+文件: DJI_20251126161006_0001_T.JPG
+============================================================
+
+【图像分辨率】
+  宽度: 1280 px
+  高度: 1024 px
+
+【R-JPEG 版本】
+  RJPEG: 0x300
+  Header: 0x1
+  Curve: 0x1
+
+【测量参数】
+  发射率 (Emissivity):     0.95
+  目标距离 (Distance):     13.00 m
+  相对湿度 (Humidity):     50.0 %
+  反射温度 (Reflection):   25.00 °C
+  环境温度 (Ambient):      22.12 °C
+
+【参数有效范围】
+  距离:     [1.0, 300.0] m
+  湿度:     [1.0, 100.0] %
+  发射率:   [0.10, 1.00]
+  反射温度: [-40.0, 100.0] °C
+  环境温度: [-40.0, 80.0] °C
+============================================================
 ```
 
 ## 常见问题
