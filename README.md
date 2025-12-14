@@ -29,7 +29,7 @@
 
 1. 克隆仓库
 ```bash
-git 
+git https://github.com/chen050117/dji-thermal-converter.git
 cd dji-thermal-converter
 ```
 
